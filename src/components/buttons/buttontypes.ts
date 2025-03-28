@@ -5,3 +5,4 @@ export type ButtonProps = {
     type: 'submit' | 'button' | 'reset',
     handleBtnClick: () => void,
 }
+
