@@ -6,3 +6,4 @@ export type ButtonProps = {
     handleBtnClick: () => void,
 }
 
+export const basicStyles = 'flex px-3 pz-2 rounded-lg border-2 transition-all duration-300';
