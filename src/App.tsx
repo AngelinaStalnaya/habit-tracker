@@ -2,7 +2,8 @@ import './App.css';
 import ButtonFilled from './components/ui/buttons/ButtonFilled';
 import ButtonOutlined from './components/ui/buttons/ButtonOutlined';
 import Checkbox from './components/ui/checkbox/Checkbox';
-import InputComp from './components/ui/input/InputComp';
+import InputText from './components/ui/inputs/InputText';
+import InputTime from './components/ui/inputs/InputTime';
 import Header from './components/ui/text/Header';
 import Paragraph from './components/ui/text/Paragraph';
 
@@ -15,7 +16,8 @@ function App() {
       <ButtonOutlined type='button' handleBtnClick={() => console.log('clicked outlined')}>Outlined</ButtonOutlined>
       <ButtonFilled type='button' handleBtnClick={() => console.log('clicked filled')}>Filled</ButtonFilled>
       <Checkbox label='Выпить стакан воды натощак' id='7' name='try' value='water' />
-      <InputComp name='1 input' />
+      <InputText name='1 input' />
+      <InputTime required/>
 
     </div>
   )

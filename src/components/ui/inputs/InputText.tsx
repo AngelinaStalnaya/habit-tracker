@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { InputProps } from "./inputTypes";
+import { InputTextProps } from "./inputTypes";
 
-const InputComp = ({ name }: InputProps) => {
+const InputText = ({ name }: InputTextProps) => {
     const [inputValue, setInputValue] = useState<string>('');
 
     return (
@@ -15,4 +15,4 @@ const InputComp = ({ name }: InputProps) => {
     )
 }
 
-export default InputComp;
+export default InputText;
