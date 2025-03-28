@@ -1,4 +1,4 @@
-import { basicStyles, ButtonProps } from "./buttontypes";
+import { basicStyles, ButtonProps } from "./buttonTypes";
 
 export default function ButtonFilled({ children, type, handleBtnClick }: ButtonProps) {
     return (

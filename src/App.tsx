@@ -1,7 +1,8 @@
 import './App.css';
 import ButtonFilled from './components/buttons/ButtonFilled';
 import ButtonOutlined from './components/buttons/ButtonOutlined';
-import Checkbox from './components/buttons/checkbox/Checkbox';
+import Checkbox from './components/checkbox/Checkbox';
+import InputComp from './components/input/InputComp';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
       <ButtonOutlined type='button' handleBtnClick={() => console.log('clicked outlined')}>Outlined</ButtonOutlined>
       <ButtonFilled type='button' handleBtnClick={() => console.log('clicked filled')}>Filled</ButtonFilled>
       <Checkbox label='Выпить стакан воды натощак' id='7' name='try' value='water'/>
+      <InputComp name='1 input'/>
     </div>
   )
 }
