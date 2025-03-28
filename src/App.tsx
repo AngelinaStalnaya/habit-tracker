@@ -2,6 +2,7 @@ import './App.css';
 import ButtonFilled from './components/ui/buttons/ButtonFilled';
 import ButtonOutlined from './components/ui/buttons/ButtonOutlined';
 import Checkbox from './components/ui/checkbox/Checkbox';
+import InputDate from './components/ui/inputs/InputDate';
 import InputText from './components/ui/inputs/InputText';
 import InputTime from './components/ui/inputs/InputTime';
 import Header from './components/ui/text/Header';
@@ -18,6 +19,7 @@ function App() {
       <Checkbox label='Выпить стакан воды натощак' id='7' name='try' value='water' />
       <InputText name='1 input' />
       <InputTime required/>
+      <InputDate id='524'/>
 
     </div>
   )
