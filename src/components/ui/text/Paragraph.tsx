@@ -1,12 +1,12 @@
-type ParagraphProps = {
-    text: string,
+export type ParagraphProps = {
+    paragraph: string | undefined,
 
 }
 
-const Paragraph = ({ text }: ParagraphProps) => {
+const Paragraph = ({ paragraph }: ParagraphProps) => {
     return (
         <p className="paragraph text-purple-700 text-lg font-medium" >
-            {text}
+            {paragraph}
         </p>
     )
 }

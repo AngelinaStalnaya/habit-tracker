@@ -1,28 +1,30 @@
 import './App.css';
-import ButtonFilled from './components/ui/buttons/ButtonFilled';
-import ButtonOutlined from './components/ui/buttons/ButtonOutlined';
-import Checkbox from './components/ui/checkbox/Checkbox';
-import InputDate from './components/ui/inputs/InputDate';
-import InputText from './components/ui/inputs/InputText';
-import InputTime from './components/ui/inputs/InputTime';
-import Header from './components/ui/text/Header';
-import Paragraph from './components/ui/text/Paragraph';
-import ProgressBar from './components/ui/progressBar/ProgressBar';
+import HabitList from './components/HabitList';
+
+const habitList = [
+  {
+      name: 'First habit',
+      progressNum: 17,
+      startDate: '12.03.2025'
+  },
+  {
+      name: 'Second habit',
+      progressNum: 85,
+      startDate: '12.02.2025'
+  },
+  {
+      name: 'Third habit',
+      progressNum: 36,
+      startDate: '20.03.2025'
+  }]
+
 
 function App() {
 
   return (
-    <div className='flex justify-center items-center flex-col gap-2'>
-      <Header text='Habit tracker' />
-      <Paragraph text='Description'/>
-      <ButtonOutlined type='button' handleBtnClick={() => console.log('clicked outlined')}>Outlined</ButtonOutlined>
-      <ButtonFilled type='button' handleBtnClick={() => console.log('clicked filled')}>Filled</ButtonFilled>
-      <Checkbox label='Выпить стакан воды натощак' id='7' name='try' value='water' />
-      <InputText name='1 input' />
-      <InputTime required/>
-      <InputDate id='524'/>
-      <ProgressBar progress={75} containerWidth={370} label='progress'/>
-
+    <div className='flex justify-center items-left flex-col gap-2'>
+    
+    <HabitList list={habitList}/>
     </div>
   )
 }

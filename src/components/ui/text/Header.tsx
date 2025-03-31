@@ -1,12 +1,12 @@
-type HeaderProps = {
-    text: string,
+export type HeaderProps = {
+    header: string | undefined,
 
 }
 
-const Header = ({ text }: HeaderProps) => {
+const Header = ({ header }: HeaderProps) => {
     return (
         <h2 className="header text-purple-900 text-3xl font-semibold" >
-            {text}
+            {header}
         </h2>
     )
 }

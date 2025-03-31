@@ -1,5 +1,5 @@
 export type ProgressBarProps = {
-    progress: number,
+    progress: number | undefined,
     containerWidth: number,
     label?: string,
   }
