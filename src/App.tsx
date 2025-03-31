@@ -7,6 +7,7 @@ import InputText from './components/ui/inputs/InputText';
 import InputTime from './components/ui/inputs/InputTime';
 import Header from './components/ui/text/Header';
 import Paragraph from './components/ui/text/Paragraph';
+import ProgressBar from './components/ui/progressBar/ProgressBar';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <InputText name='1 input' />
       <InputTime required/>
       <InputDate id='524'/>
+      <ProgressBar progress={75} containerWidth={370} label='progress'/>
 
     </div>
   )
