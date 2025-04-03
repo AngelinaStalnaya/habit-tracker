@@ -3,7 +3,7 @@ import { InputTimeProps } from "./inputTypes";
 
 
 const InputTime = ({ required, startValue }: InputTimeProps) => {
-    const [notifyTime, setNotifyTime] = useState<string | undefined>(undefined)
+    const [notifyTime, setNotifyTime] = useState<string>('')
     return (
         <input
             className="text-purple-900 border-2 rounded-xl px-3 pz-2 cursor-pointer border-purple-900 transition-all duration-300

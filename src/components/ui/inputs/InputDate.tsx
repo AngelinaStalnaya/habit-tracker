@@ -2,12 +2,12 @@ import { useState } from "react";
 
 type InputDateProps = {
     id: string,
-    presetDate?: string,
+    presetDate?: string | null,
 }
 
 
 const InputDate = ({ id, presetDate }: InputDateProps) => {
-    const [userDate, setUserDate] = useState<string | undefined>(undefined);
+    const [userDate, setUserDate] = useState<string>('');
     return (
         <input
             className="text-purple-900 border-2 rounded-xl px-3 pz-2 cursor-pointer border-purple-900 transition-all duration-300
