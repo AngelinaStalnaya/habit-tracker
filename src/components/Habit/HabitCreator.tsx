@@ -6,6 +6,7 @@ import Paragraph from "../ui/text/Paragraph";
 import Checkbox from "../ui/checkbox/Checkbox";
 import { FormEvent, useState } from "react";
 import { useHabitStore } from "../../../state-managment/store";
+import InputNum from "../ui/inputs/InputNum";
 
 const HabitCreator = () => {
     const [checked, setChecked] = useState<boolean>(false);
@@ -23,11 +24,10 @@ const HabitCreator = () => {
         const habit = {
             name: `${data['new-habit']}`.trim(),
             startDate: `${data['date-start']}`,
-            duration: 21,
+            duration: Number(`${data['duration'] || 21}`),
             notification: `${data['notification']}`.length > 1 && `${data['notification']}`,
             repeatedTimes: 0,
         };
-        
         saveHabit(habit)
     }
 
@@ -46,10 +46,10 @@ const HabitCreator = () => {
                     <Paragraph paragraph="or" />
                     <InputDate id={'start'} presetDate={checked ? today : null} />
                 </div>
-                {/* <div className="habit-duration flex gap-2">
+                <div className="habit-duration flex gap-2">
                     <Paragraph paragraph="Set habit min duration period:"/>
-                    <InputText name='duration-min' />
-                </div> */}
+                    <InputNum name='duration-min' />
+                </div>
                 <div className="habit-notification flex gap-2 mb-1">
                     <Paragraph paragraph="Notify at:" />
                     <InputTime required={false} />
