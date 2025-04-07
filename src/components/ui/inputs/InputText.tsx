@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { InputTextProps } from "./inputTypes";
 
-const InputText = ({ name }: InputTextProps) => {
+const InputText = ({ name, required }: InputTextProps) => {
     const [inputValue, setInputValue] = useState<string>('');
 
     return (
@@ -11,6 +11,7 @@ const InputText = ({ name }: InputTextProps) => {
             name={name}
             type='text'
             value={inputValue}
+            required={required}
             onChange={(e) => setInputValue(e.target.value)}>
         </input>
     )

@@ -8,6 +8,7 @@ import { FormEvent, useState } from "react";
 import { useHabitStore } from "../../../state-managment/store";
 import InputNum from "../ui/inputs/InputNum";
 import { v4 as uuid } from "uuid";
+import ButtonOutlined from "../ui/buttons/ButtonOutlined";
 
 const HabitCreator = () => {
     const [checked, setChecked] = useState<boolean>(false);
@@ -16,21 +17,26 @@ const HabitCreator = () => {
     const datestamp = new Date();
     const month = datestamp.getMonth() + 1;
     const day = datestamp.getDate();
-    const today = `${datestamp.getFullYear()}-${month > 9 ?  month : `0${month}`}-${day > 9 ? day : `0${day}`}`
+    const today = `${datestamp.getFullYear()}-${month > 9 ? month : `0${month}`}-${day > 9 ? day : `0${day}`}`
 
     const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const data = Object.fromEntries(new FormData(e.currentTarget))
 
         const habit = {
+            id: uuid(),
             name: `${data['new-habit']}`.trim(),
             startDate: `${data['date-start']}`,
             duration: Number(`${data['duration'] || 21}`),
             notification: `${data['notification']}`.length > 1 && `${data['notification']}`,
             repeatedTimes: 0,
-            id: uuid(),
         };
         saveHabit(habit)
+    }
+
+    const handleFormClear = () => {
+        console.log('clear')
+
     }
 
     return (
@@ -39,24 +45,27 @@ const HabitCreator = () => {
                 <legend className="text-purple-900 bg-purple-300 rounded-2xl p-1 border-2">Add new habit</legend>
                 <div className="habit-name flex gap-2">
                     <Paragraph paragraph="Set habit:" />
-                    <InputText name='new-habit' />
+                    <InputText name='new-habit' required />
                 </div>
                 <div className="habit-start flex gap-2">
                     <Paragraph paragraph="Set start date:" />
                     <Checkbox name='start-day' label="today" id={'start'}
                         value={today} checked={checked} setChecked={setChecked} />
                     <Paragraph paragraph="or" />
-                    <InputDate id={'start'} presetDate={checked ? today : null} />
+                    <InputDate id={'start'} presetDate={checked ? today : null} required />
                 </div>
                 <div className="habit-duration flex gap-2">
-                    <Paragraph paragraph="Set habit min duration period:"/>
+                    <Paragraph paragraph="Set habit min duration period:" />
                     <InputNum name='duration-min' />
                 </div>
                 <div className="habit-notification flex gap-2 mb-1">
                     <Paragraph paragraph="Notify at:" />
                     <InputTime required={false} />
                 </div>
-                <div className="flex justify-end">
+                <div className="flex justify-end gap-2">
+                    <ButtonOutlined type="button" handleBtnClick={handleFormClear}>
+                        Reset
+                    </ButtonOutlined>
                     <ButtonFilled type='submit'>
                         Submit
                     </ButtonFilled>
