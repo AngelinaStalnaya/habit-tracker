@@ -7,6 +7,7 @@ import Checkbox from "../ui/checkbox/Checkbox";
 import { FormEvent, useState } from "react";
 import { useHabitStore } from "../../../state-managment/store";
 import InputNum from "../ui/inputs/InputNum";
+import { v4 as uuid } from "uuid";
 
 const HabitCreator = () => {
     const [checked, setChecked] = useState<boolean>(false);
@@ -27,6 +28,7 @@ const HabitCreator = () => {
             duration: Number(`${data['duration'] || 21}`),
             notification: `${data['notification']}`.length > 1 && `${data['notification']}`,
             repeatedTimes: 0,
+            id: uuid(),
         };
         saveHabit(habit)
     }
