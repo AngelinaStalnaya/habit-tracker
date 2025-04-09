@@ -1,21 +1,29 @@
+import { HabitProps } from "../../../state-managment/store";
+import PortalModal from "../Modal/Portal";
+import HabitEditor from "./HabitEditor";
 import HabitItemInfo from "./HabitItemInfo";
 
-interface HabitListProps  {
-    name: string ,
-    progressNum?: number,
-    startDate: string
+export type HabitListProps = {
+    habitList: Array<HabitProps>
 }
 
-const HabitList = ({ list }: {list: Array<HabitListProps>}) => {
+const HabitList = ({ habitList,  }: HabitListProps) => {
     return (
-        <ul className="flex flex-col list-disc gap-0.5 items-end">
-            {list.map((item) => 
-                <HabitItemInfo 
-                key={item.name} 
-                header={item.name} 
-                progress={item.progressNum} 
-                paragraph={item.startDate} />)}
-        </ul>
+        <>
+            <ul className="flex flex-col list-disc gap-0.5 items-end">
+                {habitList.map((item) =>
+                    <HabitItemInfo
+                        header={item.name}
+                        paragraph={item.startDate}
+                        duration={item.duration}
+                        repeatedTimes={item.repeatedTimes}
+                        key={item.id}>
+                        <PortalModal portalBtnName='Edit'>
+                            <HabitEditor habit={item} />
+                        </PortalModal>
+                    </HabitItemInfo>)}
+            </ul>
+        </>
     )
 }
 

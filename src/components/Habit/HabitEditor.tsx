@@ -7,7 +7,7 @@ import Paragraph from "../ui/text/Paragraph";
 import InputNum from "../ui/inputs/InputNum";
 import { HabitProps, useHabitStore } from "../../../state-managment/store";
 import PortalModal from "../Modal/Portal";
-import HabitDelete from "./HabitDelet";
+import HabitDelete from "./HabitDelete";
 
 type HabitEditorProps = {
     habit: HabitProps,

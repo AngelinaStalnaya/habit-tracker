@@ -16,7 +16,7 @@ const HabitItemInfo = ({ header, paragraph, duration, repeatedTimes, containerWi
     return (
         <div className="habit-item flex gap-2 items-center justify-end">
             <><Header header={header} /></>
-            <Paragraph paragraph={`Start date: ${paragraph}`} />
+            <Paragraph paragraph={`On track since: ${paragraph}`} />
             <ProgressBar progress={progress} containerWidth={containerWidth ? containerWidth : 200} label={label ? label : `${progress}%`} />
             {children}
         </div>
