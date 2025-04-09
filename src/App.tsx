@@ -8,7 +8,6 @@ import Header from './components/ui/text/Header';
 
 function App() {
   const habits = useHabitStore((state) => state.habitsList);
-  const deleteHabit = useHabitStore((state) => state.deleteHabitAsync);
 
   return (
     <div className='flex justify-center items-left flex-col gap-2'>
@@ -20,7 +19,6 @@ function App() {
           duration={item.duration}
           repeatedTimes={item.repeatedTimes}
           key={item.id}
-          deleteFnc={() => deleteHabit(item.id)}
         >
           <PortalModal portalBtnName='Edit'>
             <HabitEditor habit={item} />

@@ -22,7 +22,6 @@ const HabitCreator = () => {
     const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const data = Object.fromEntries(new FormData(e.currentTarget));
-        console.log(data)
 
         const habit = {
             id: uuid(),

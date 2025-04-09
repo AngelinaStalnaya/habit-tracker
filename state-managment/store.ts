@@ -38,7 +38,7 @@ export const useHabitStore = create<HabitState>()(
         startDate: "2025-03-28",
         duration: 21,
         notification: "15:30",
-        repeatedTimes: 8,
+        repeatedTimes: 10,
       },
     ],
     addHabitAsync: async (habit: HabitProps) => {
