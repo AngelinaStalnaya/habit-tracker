@@ -2,7 +2,7 @@ import { v4 as uuid } from "uuid";
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 
-type HabitProps = {
+export type HabitProps = {
   id: string;
   name: string;
   startDate: string;

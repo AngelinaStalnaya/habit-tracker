@@ -3,7 +3,7 @@ import React, { MouseEvent } from "react";
 export type ButtonProps = {
     children: string | React.ReactNode,
     type: 'submit' | 'button' ,
-    handleBtnClick?: (e: MouseEvent<HTMLButtonElement>) => void,
+    handleBtnClick?: (e: MouseEvent<HTMLButtonElement>) => void | Promise<void>,
     disabled?: boolean,
 }
 

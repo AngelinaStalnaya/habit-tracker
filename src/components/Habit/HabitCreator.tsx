@@ -1,14 +1,14 @@
+import { FormEvent, useState } from "react";
+import { useHabitStore } from "../../../state-managment/store";
+import { v4 as uuid } from "uuid";
 import ButtonFilled from "../ui/buttons/ButtonFilled";
 import InputDate from "../ui/inputs/InputDate";
 import InputText from "../ui/inputs/InputText";
 import InputTime from "../ui/inputs/InputTime";
 import Paragraph from "../ui/text/Paragraph";
 import Checkbox from "../ui/checkbox/Checkbox";
-import { FormEvent, useState } from "react";
-import { useHabitStore } from "../../../state-managment/store";
 import InputNum from "../ui/inputs/InputNum";
-import { v4 as uuid } from "uuid";
-import ButtonOutlined from "../ui/buttons/ButtonOutlined";
+
 
 const HabitCreator = () => {
     const [checked, setChecked] = useState<boolean>(false);
@@ -21,7 +21,8 @@ const HabitCreator = () => {
 
     const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        const data = Object.fromEntries(new FormData(e.currentTarget))
+        const data = Object.fromEntries(new FormData(e.currentTarget));
+        console.log(data)
 
         const habit = {
             id: uuid(),
@@ -32,11 +33,6 @@ const HabitCreator = () => {
             repeatedTimes: 0,
         };
         saveHabit(habit)
-    }
-
-    const handleFormClear = () => {
-        console.log('clear')
-
     }
 
     return (
@@ -60,12 +56,9 @@ const HabitCreator = () => {
                 </div>
                 <div className="habit-notification flex gap-2 mb-1">
                     <Paragraph paragraph="Notify at:" />
-                    <InputTime required={false} />
+                    <InputTime />
                 </div>
                 <div className="flex justify-end gap-2">
-                    <ButtonOutlined type="button" handleBtnClick={handleFormClear}>
-                        Reset
-                    </ButtonOutlined>
                     <ButtonFilled type='submit'>
                         Submit
                     </ButtonFilled>

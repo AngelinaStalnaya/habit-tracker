@@ -4,7 +4,7 @@ export type InputTextProps = {
 };
 
 export type InputTimeProps = {
-    required: boolean,
+    required?: boolean,
     startValue? : string,
 }
 
@@ -15,5 +15,5 @@ export type InputNumProps = {
 export type InputDateProps = {
     id: string,
     presetDate?: string | null,
-    required: boolean,
+    required?: boolean,
 }

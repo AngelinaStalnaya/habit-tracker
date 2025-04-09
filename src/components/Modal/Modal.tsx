@@ -1,18 +1,13 @@
 import ButtonFilled from "../ui/buttons/ButtonFilled";
-
-type ModalProps = {
-    children: React.ReactNode,
-    visibility: boolean,
-    closeModal: () => void,
-
-};
+import { ModalProps } from "./modalTypes";
 
 
-const Modal = ({ children, visibility, closeModal }: ModalProps) => {
+const Modal = ({ children, closeModal }: ModalProps) => {
     return (
-        <div className="absolute flex flex-col transition-all duration-500 bg-purple-400 p-3 rounded-2xl" style={{ visibility: `${visibility ? 'visible' : 'hidden'}` }}>
+        <div className="absolute flex flex-col transition-all duration-500 
+         bg-purple-400 p-3 rounded-2xl" >
             <div className="flex justify-end">
-                <ButtonFilled type='button' handleBtnClick={closeModal}> Close Modal</ButtonFilled>
+                <ButtonFilled type='button' handleBtnClick={closeModal}>Close Modal</ButtonFilled>
             </div>
             {children}
         </div>
