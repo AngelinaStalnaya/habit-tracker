@@ -7,7 +7,7 @@ export type HabitListProps = {
     habitList: Array<HabitProps>
 }
 
-const HabitList = ({ habitList,  }: HabitListProps) => {
+const HabitList = ({ habitList }: HabitListProps) => {
     return (
         <>
             <ul className="flex flex-col list-disc gap-0.5 items-end">
@@ -17,7 +17,10 @@ const HabitList = ({ habitList,  }: HabitListProps) => {
                         paragraph={item.startDate}
                         duration={item.duration}
                         repeatedTimes={item.repeatedTimes}
-                        key={item.id}>
+                        key={item.id}
+                        description={item.description}
+                        days={item.days}
+                        >
                         <PortalModal portalBtnName='Edit'>
                             <HabitEditor habit={item} />
                         </PortalModal>

@@ -9,6 +9,8 @@ export type HabitProps = {
   duration: number;
   notification: string | boolean;
   repeatedTimes: number;
+  description: string,
+  days: Array<string>,
 };
 
 interface HabitState {
@@ -31,6 +33,8 @@ export const useHabitStore = create<HabitState>()(
         duration: 21,
         notification: "18:00",
         repeatedTimes: 7,
+        description: 'Description of first habit tracker',
+        days: ["Mon", "Fri", "Sat"],
       },
       {
         id: uuid(),
@@ -39,6 +43,8 @@ export const useHabitStore = create<HabitState>()(
         duration: 21,
         notification: "15:30",
         repeatedTimes: 10,
+        days: ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun'],
+        description: 'Second descr',
       },
     ],
     addHabitAsync: async (habit: HabitProps) => {
